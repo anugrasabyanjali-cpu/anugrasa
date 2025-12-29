@@ -38,12 +38,6 @@ const products = [
 ];
 
 export default function ProductGrid() {
-  const firstRow = products.slice(0, 4);
-  const secondRow = products.slice(4);
-
-  const cardWidth = "300px";
-  const cardHeight = "200px";
-
   return (
     <section
       id="products"
@@ -53,52 +47,23 @@ export default function ProductGrid() {
         Our Snacks
       </h2>
 
-      {/* First row */}
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[2000px] mx-auto justify-center">
-        {firstRow.map((item, index) => (
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto place-items-center">
+        {products.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-sm border p-4 flex flex-col items-center"
-            style={{ width: cardWidth }}
+            className="bg-white rounded-2xl shadow-sm border p-4 flex flex-col items-center w-[300px]"
           >
             <img
               src={`/images/${item.name}.jpeg`}
               alt={item.name}
-              style={{ width: cardWidth, height: cardHeight }}
-              className="mb-3 rounded-xl object-cover"
+              className="mb-3 rounded-xl object-cover w-full h-[200px]"
             />
 
             <h3 className="text-lg font-semibold text-[#691506] text-center">
               {item.name}
             </h3>
 
-            <p className="text-slate-600 mt-1 flex-grow text-center text-sm">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* Second row */}
-      <div className="mt-8 flex justify-center gap-6 flex-wrap">
-        {secondRow.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl shadow-sm border p-4 flex flex-col items-center"
-            style={{ width: cardWidth }}
-          >
-            <img
-              src={`/images/${item.name}.jpeg`}
-              alt={item.name}
-              style={{ width: cardWidth, height: cardHeight }}
-              className="mb-3 rounded-xl object-cover"
-            />
-
-            <h3 className="text-lg font-semibold text-[#691506] text-center">
-              {item.name}
-            </h3>
-
-            <p className="text-slate-600 mt-1 flex-grow text-center text-sm">
+            <p className="text-slate-600 mt-1 text-center text-sm">
               {item.description}
             </p>
           </div>
